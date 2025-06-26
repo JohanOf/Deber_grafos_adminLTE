@@ -1,0 +1,64 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Graph App{% endblock %}</title>
+
+  <!-- AdminLTE CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='adminlte/plugins/fontawesome-free/css/all.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='adminlte/dist/css/adminlte.min.css') }}">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% block extra_css %}{% endblock %}
+</head>
+<body class="hold-transition layout-top-nav">
+<div class="wrapper">
+
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
+    <div class="container">
+      <a href="/" class="navbar-brand">
+        <span class="brand-text font-weight-light">Graph App</span>
+      </a>
+
+      <div class="collapse navbar-collapse order-3">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a href="/camino_formulario" class="nav-link">Path Finder</a>
+          </li>
+          <li class="nav-item">
+            <a href="/camino" class="nav-link">Default Route</a>
+          </li>
+          <li class="nav-item">
+            <a href="/grafo" class="nav-link">Graph Image</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <div class="content">
+      <div class="container pt-4">
+        {% block content %}{% endblock %}
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="main-footer text-center">
+    <strong>&copy; 2025 Graph App</strong>
+  </footer>
+
+</div>
+
+<!-- Scripts -->
+<script src="{{ url_for('static', filename='adminlte/plugins/jquery/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ url_for('static', filename='adminlte/dist/js/adminlte.min.js') }}"></script>
+
+{% block extra_js %}{% endblock %}
+</body>
+</html>
